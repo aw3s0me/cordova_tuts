@@ -1,10 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
 .ui-page {
     background-color: white;
 }
-
-
 
 #container {
     width: 100%;
@@ -51,10 +47,8 @@ footer ul#menu > li.tab-button.active {
         border-radius: 0;
     }
 
-
-/* TJ WAS HERE */
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: sans-serif;
 }
 body .ui-page {
     padding-top:10px;
@@ -70,7 +64,7 @@ footer {
     margin-bottom:20px;
     padding: 10px;
     background:#fff;
-    font-family:"Open Sans", Helvetica, Arial;
+    font-family: Helvetica, Arial;
 }
 .project span.project-name {
     font-size: 1.2em;

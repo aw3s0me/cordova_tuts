@@ -39,16 +39,28 @@
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
+        <div id="container">
+            <div id="tab-content">
+
+            </div>
+        </div>
+        <footer>
+            <ul id="menu">
+                <li id="search-tab-button" class="tab-button active" data-tab="#search-tab">Search Projects</li>
+                <li id="post-tab-button" class="tab-button" data-tab="#add-tab">Post a Project</li>
+            </ul>
+        </footer>
+        <!-- <div class="app">
             <h1>Apache Cordova</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
-        </div>
+        </div> -->
         <script src="node_modules/jquery-mobile/node_modules/jquery/dist/jquery.min.js"></script>
         <script src="node_modules/jquery-mobile/dist/jquery.mobile.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/controller.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
