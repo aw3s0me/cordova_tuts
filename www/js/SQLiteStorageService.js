@@ -61,7 +61,7 @@ var SQLiteStorageService = function() {
             });
             return deferred.promise();
         },
-        addProject: function() {
+        addProject: function(name, company, description, addLocation) {
             var deferred = $.Deferred();
             console.log(db);
             if (addLocation) {

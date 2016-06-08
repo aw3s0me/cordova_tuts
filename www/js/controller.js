@@ -44,6 +44,29 @@ var Controller = function() {
                 $('#tab-content').find('#post-project-form').on('submit', self.postProject);
             });
         },
+        postProject: function(e) {
+
+            e.preventDefault();
+            var name = $('#project-name').val();
+            var description = $('#project-description').val();
+            var company = $('#company').val();
+            var addLocation = $('#include-location').is(':checked');
+
+            if (!name || !description || !company) {
+                alert('Please fill in all fields');
+                return;
+            } else {
+                var result = self.storageService.addProject(
+                    name, company, description, addLocation);
+
+                result.done(function() {
+                    alert('Project successfully added');
+                    self.renderSearchView();
+                }).fail(function(error) {
+                    alert(error);
+                });
+            }
+        },
         /**
          * Rendering Search View
          * @return {[type]} [description]
@@ -58,7 +81,32 @@ var Controller = function() {
             var $projectTemplate = null;
             $("#tab-content").load("./views/search-project-view.html", function(data) {
                 $projectTemplate = $('.project').remove();
-                // Load projects here
+
+                var projects = self.storageService.getProjects().done(function(projects) {
+
+                    for(var idx in projects) {
+                        var $div = $projectTemplate.clone();
+                        var project = projects[idx];
+
+                        $div.find('.project-name').text(project.name);
+                        $div.find('.project-company').text(project.company);
+                        $div.find('.project-description').text(project.description);
+
+                        if (project.location) {
+                            var url =
+                                '<a target="_blank" href="https://www.google.com.au/maps/preview/@' +
+                                project.location.latitude + ',' + project.location.longitude + ',10z">Click to open map</a>';
+
+                            $div.find('.project-location').html(url);
+                        } else {
+                            $div.find('.project-location').text("Not specified");
+                        }
+
+                        $tab.append($div);
+                    }
+                }).fail(function(error) {
+                    alert(error);
+                });
             });
         }
     }

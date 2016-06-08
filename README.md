@@ -23,3 +23,7 @@ https://cordova.apache.org/docs/en/latest/guide/cli/
 * chrome://inspect/
 ##Add Sqlite plugin:
 * cordova plugin add https://github.com/litehelpers/Cordova-sqlite-storage.git
+##Install dialog plugin
+cordova plugin add cordova-plugin-dialogs
+##Install console plugin
+cordova plugin add cordova-plugin-console
