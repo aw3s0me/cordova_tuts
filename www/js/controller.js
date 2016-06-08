@@ -6,8 +6,13 @@ var Controller = function() {
         self: null,
         initialize: function() {
             self = this;
-            self.bindEvents();
-            self.renderSearchView();
+            new SQLiteStorageService().done(function(service) {
+                self.storageService = service;
+                self.bindEvents();
+                self.renderSearchView();
+            }).fail(function(error) {
+                alert(error);
+            });
         },
         bindEvents: function() {
             $('.tab-button').on('click', this.onTabClick);

@@ -41,6 +41,11 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
+        if (!parentElement) {
+            console.log('Parent Element is empty!');
+            return;
+        }
+
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
 

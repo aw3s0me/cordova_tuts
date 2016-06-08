@@ -15,4 +15,11 @@ https://cordova.apache.org/docs/en/latest/guide/cli/
 * cordova build
 * cordova emulate android
 * cordova run android
-* Install jquery-mobile using: https://www.npmjs.com/package/cordova-jquery
+* Install jquery-mobile using: npm install jquery-mobile
+#Helpful commands
+##See devices list
+* adb devices
+##Debug in chrome
+* chrome://inspect/
+##Add Sqlite plugin:
+* cordova plugin add https://github.com/litehelpers/Cordova-sqlite-storage.git
